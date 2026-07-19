@@ -1,6 +1,6 @@
-## DataFoundry
+## Corpus-Foundry
 
-<img width="1802" height="873" alt="ChatGPT Image 2026년 7월 19일 오전 09_28_41" src="https://github.com/user-attachments/assets/0b04344b-e1f5-4504-bd53-6893a7cab7a6" />
+<img width="1947" height="808" alt="ChatGPT Image 2026년 7월 19일 오전 10_15_19" src="https://github.com/user-attachments/assets/20c842b3-515a-40c3-a6dd-22d2adabd43c" />
 
-DataFoundry is a Python library, designed to automate laborious text corpus dataset preprocessing. 
+Corpus-Foundry is a Python library, designed to automate laborious text corpus dataset preprocessing. 
 
