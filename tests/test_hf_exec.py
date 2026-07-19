@@ -1,6 +1,6 @@
 from datasets import Dataset
-from dataforge.hf_executor import HuggingFaceExecutor
-from dataforge.operation import MapOperation
+from corpus_foundry.hf_executor import HuggingFaceExecutor
+from corpus_foundry.operation import MapOperation
 
 def test_executor_applies_map_op() -> None:
     dataset = Dataset.from_dict({"a": [1, 2, 3]})

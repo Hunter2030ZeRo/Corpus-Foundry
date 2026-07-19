@@ -3,7 +3,10 @@ requires = ["maturin>=1.13,<2.0"]
 build-backend = "maturin"
 
 [project]
-name = "dataforge"
+name = "corpus-foundry"
+version = "0.1.0"
+description = "Automated corpus preprocessing library for Hugging Face datasets"
+readme = "README.md"
 requires-python = ">=3.10"
 classifiers = [
     "Programming Language :: Rust",
@@ -15,4 +18,4 @@ dynamic = ["version"]
 
 [tool.maturin]
 python-source = "python"
-module-name = "dataforge._accelerated"
+module-name = "corpus_foundry._accelerated"

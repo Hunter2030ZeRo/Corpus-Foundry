@@ -1,6 +1,6 @@
 from datasets import Dataset, DatasetDict
 
-from dataforge.pipeline import Pipeline
+from corpus_foundry.pipeline import Pipeline
 
 def test_dataset_pipeline() -> None:
     dataset = Dataset.from_dict({"a": [1, 2, 3]})

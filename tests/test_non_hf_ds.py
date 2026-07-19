@@ -1,4 +1,4 @@
-from dataforge.pipeline import Pipeline
+from corpus_foundry.pipeline import Pipeline
 
 import pytest
 
