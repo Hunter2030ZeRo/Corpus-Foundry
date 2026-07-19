@@ -11,7 +11,7 @@ class Pipeline:
         operations: tuple[Operation, ...] = (),
     ) -> None:
         if not isinstance(dataset, (Dataset, DatasetDict)):
-            raise TypeError("Expected a Dataset or DatasetDict, got {type(dataset)} instead.")
+            raise TypeError(f"Expected a Dataset or DatasetDict, got {type(dataset)} instead.")
         self._dataset = dataset
         self._operations = operations
 
@@ -49,5 +49,5 @@ class Pipeline:
         )
         return Pipeline(self._dataset, self._operations + (operation,))
 
-    def run(self, *, mode: str = "auto") -> HFDataset:
+    def run(self, *, mode: str = "auto") -> Dataset | DatasetDict:
         return HuggingFaceExecutor(mode=mode).execute(self._dataset, self._operations,)

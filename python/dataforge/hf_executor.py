@@ -1,4 +1,5 @@
 from __future__ import annotations
+from copyreg import remove_extension
 from datasets import Dataset, DatasetDict
 from .operation import FilterOperation, MapOperation, Operation
 
@@ -6,7 +7,7 @@ from .operation import FilterOperation, MapOperation, Operation
 class HuggingFaceExecutor:
     def __init__(self, *, mode: str = "auto") -> None:
         if mode not in {"auto", "safe", "debug", "fast"}:
-            raise ValueError(f"Unkown execution mode: {mode}")
+            raise ValueError(f"Unknown execution mode: {mode}")
 
         self.mode = mode
 
@@ -21,9 +22,10 @@ class HuggingFaceExecutor:
             if isinstance(operation, MapOperation):
                 current = current.map(
                     operation.function,
-                    batched=operation.batched or False,
+                    batched=False if operation.batched is None else operation.batched,
                     batch_size=operation.batch_size,
                     num_proc=operation.num_workers,
+                    remove_columns=(operation.remove_columns) or None,
                 )
             elif isinstance(operation, FilterOperation):
                 current = current.filter(
